@@ -99,7 +99,21 @@ onMounted(async () => {
 })
 
 function addToCart() {
-  cartStore.add(product.value, qty.value)
-  toastStore.show(`Added ${qty.value}× "${product.value.title.slice(0, 25)}…" to cart!`)
+  if (!product.value) return
+
+  // normalize product (IMPORTANT FIX)
+  const cleanProduct = {
+    id: product.value.id || product.value._id,
+    title: product.value.title || product.value.name,
+    price: product.value.price,
+    image: product.value.image,
+    category: product.value.category
+  }
+
+  cartStore.add(cleanProduct, qty.value)
+
+  toastStore.show(
+    `Added ${qty.value}× "${cleanProduct.title.slice(0, 25)}…" to cart!`
+  )
 }
 </script>

@@ -1,8 +1,6 @@
 <template>
   <div class="container py-5">
     <h1 class="fw-bold mb-4"><i class="bi bi-cart3 me-2"></i>Shopping Cart</h1>
-
-    <!-- Empty cart -->
     <div v-if="cartStore.items.length === 0" class="text-center py-5">
       <i class="bi bi-cart-x fs-1 text-muted"></i>
       <p class="mt-3 text-muted fs-5">Your cart is empty.</p>
@@ -12,7 +10,6 @@
     </div>
 
     <div v-else class="row g-4">
-      <!-- Cart items -->
       <div class="col-lg-8">
         <div class="card border-0 shadow-sm">
           <ul class="list-group list-group-flush">
@@ -29,7 +26,6 @@
                 </div>
                 <div class="text-end">
                   <p class="fw-bold text-primary mb-2">${{ (item.price * item.qty).toFixed(2) }}</p>
-                  <!-- Qty controls -->
                   <div class="input-group input-group-sm" style="max-width:110px" aria-label="Quantity">
                     <button class="btn btn-outline-secondary" @click="cartStore.updateQty(item.id, item.qty - 1)" aria-label="Decrease">-</button>
                     <input
@@ -58,8 +54,6 @@
           <i class="bi bi-trash me-1"></i>Clear Cart
         </button>
       </div>
-
-      <!-- Order Summary -->
       <div class="col-lg-4">
         <div class="card border-0 shadow-sm">
           <div class="card-header fw-bold bg-dark text-white">Order Summary</div>
