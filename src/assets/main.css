@@ -1,0 +1,66 @@
+/* ── Kigali Tech Store – Rwanda-themed design tokens ── */
+:root {
+  --rw-green:   #20603D;
+  --rw-yellow:  #FAD201;
+  --rw-blue:    #00A1DE;
+  --rw-dark:    #0d1b12;
+  --rw-light:   #f0faf4;
+
+  --bs-primary:        var(--rw-green);
+  --bs-primary-rgb:    32, 96, 61;
+}
+
+/* Override Bootstrap primary */
+.btn-primary           { background-color: var(--rw-green); border-color: var(--rw-green); }
+.btn-primary:hover     { background-color: #174d30; border-color: #174d30; }
+.btn-outline-primary   { color: var(--rw-green); border-color: var(--rw-green); }
+.btn-outline-primary:hover { background-color: var(--rw-green); color: #fff; }
+.text-primary          { color: var(--rw-green) !important; }
+.bg-primary            { background-color: var(--rw-green) !important; }
+.badge.bg-primary      { background-color: var(--rw-green) !important; }
+.border-primary        { border-color: var(--rw-green) !important; }
+
+/* Navbar */
+.navbar-brand span { color: var(--rw-yellow); }
+.navbar { border-bottom: 3px solid var(--rw-yellow); }
+
+/* Hero */
+.hero-section {
+  background: linear-gradient(135deg, var(--rw-dark) 0%, var(--rw-green) 100%);
+  min-height: 420px;
+}
+
+/* Product card */
+.product-card {
+  transition: transform .2s, box-shadow .2s;
+  cursor: pointer;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(32,96,61,.18) !important;
+}
+.product-card .card-img-top {
+  height: 200px;
+  object-fit: contain;
+  padding: 1rem;
+  background: #f8f9fa;
+}
+
+/* Rating stars */
+.stars { color: var(--rw-yellow); }
+
+/* Accent stripe */
+.accent-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--rw-green), var(--rw-yellow), var(--rw-blue));
+}
+
+/* Toast container */
+.toast-container { z-index: 1090; }
+
+/* Footer */
+footer { border-top: 3px solid var(--rw-yellow); }
+
+/* Smooth page transitions */
+.page-enter-active, .page-leave-active { transition: opacity .18s ease; }
+.page-enter-from, .page-leave-to { opacity: 0; }
